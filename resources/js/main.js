@@ -36,10 +36,10 @@ const getDateOfLastPayment = ((loanPrincipal / weeklyRepayment) * oneWeekMs) + s
 const dateOfLastPayment = new Date(getDateOfLastPayment).toDateString();
 
 // Render
-document.getElementById("principal").innerHTML = `Principal: $${ loanPrincipal }`;
-document.getElementById("repayment").innerHTML = `Weekly Repayment: $${ weeklyRepayment }`;
-document.getElementById("start-date").innerHTML = `Start date: ${ startDateText }`;
-document.getElementById("end-date").innerHTML = `End date: ${ dateOfLastPayment }`;
-document.getElementById("most-recent-payment-date").innerHTML = `Most recent payment: ${ dateOfMostRecentPayment }`;
-document.getElementById("current-owing").innerHTML = `Current outstanding: $${ calcCurrentAmountOwing }`;
+document.getElementById("principal").innerHTML = `$${ loanPrincipal }`;
+document.getElementById("repayment").innerHTML = `$${ weeklyRepayment } per week`;
+document.getElementById("start-date").innerHTML = `${ startDateText }`;
+document.getElementById("end-date").innerHTML = `${ dateOfLastPayment }`;
+document.getElementById("most-recent-payment-date").innerHTML = `${ dateOfMostRecentPayment }`;
+document.getElementById("current-owing").innerHTML = `$${ calcCurrentAmountOwing }`;
 // document.getElementById("all-payments").innerHTML = `List of all payments ${ allPaymentsToDate }`;
