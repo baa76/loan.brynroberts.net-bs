@@ -1,68 +1,129 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link href="https://fonts.googleapis.com/css?family=PT+Sans:400,400i,700,700i" rel="stylesheet">
-    <link rel="shortcut icon" href="./resources/img/logo_globe_icon.ico" type="image/x-icon">
-    <script type="text/javascript" src="./resources/js/main.js" async></script>
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="./resources/bootstrap-4/css/bootstrap-grid.min.css">
-    <link rel="stylesheet" href="./resources/bootstrap-4/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" media="screen" href="./resources/css/style.css" />
-    <title>loan.brynroberts.net</title>
-  </head>
-  <body>
-      <nav class="navbar navbar-default navbar-fixed-top border-bottom bg-light">
-        <div class="container-fluid">
-            <img src="./resources/img/logo_colour.svg" alt="colour logo">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <link href="https://fonts.googleapis.com/css?family=PT+Sans:400,400i,700,700i" rel="stylesheet">
+  <link rel="shortcut icon" href="./resources/img/logo_globe_icon.ico" type="image/x-icon">
+  <script type="text/javascript" src="./resources/js/main.js" async></script>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="./resources/bootstrap-4/css/bootstrap-grid.min.css">
+  <link rel="stylesheet" href="./resources/bootstrap-4/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" media="screen" href="./resources/css/style.css" />
+  <title>loan.brynroberts.net</title>
+</head>
+
+<body>
+  <nav class="navbar navbar-default navbar-fixed-top border-bottom bg-light">
+    <div class="container">
+      <img src="./resources/img/logo_colour.svg" alt="colour logo">
+    </div>
+  </nav>
+  <div class="container mt-5" id="main-container">
+    <div class="row">
+      <div class="col-xs-12 col-md-3">
+        <div class="card bg-light mb-3 d-none d-lg-flex" style="max-width: 18rem;">
+          <div class="card-header">A little note from Bryn...</div>
+          <div class="card-body">
+            <h5 class="card-title">Hi Mum and Thank You!</h5>
+            <p class="card-text font-weight-light">It’s slow going, I don’t get much time to dedicate to this web development stuff - but hopefully it will pay
+              off in the end. To the right —> is the current state of my loan from you. It is a start - and probably not
+              great, but I will keep adding to this site and practicing until I am competent.</p>
+          </div>
         </div>
-    </nav>
-    <div class="container-fluid">
-      <div class="row align-items-center">
-        <div class="container col-sm-3" id="text-panel">
-            <h3 class="text-justify">Hi Mum!</h3>
-            <p class="text-justify">It’s slow going, I don’t get much time to dedicate to this web development stuff - but hopefully it will pay off in the end. To the right —> is the current state of my loan from you. It is a start - and probably not great, but I will keep adding to this site and practicing until I am competent.</p>
+        <div class="card d-lg-none mb-5">
+          <div class="card-header" id="headingOne">
+            <h5 class="mb-0">
+              <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                A little note from Bryn...
+              </button>
+            </h5>
+          </div>
+          <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+            <div class="card-body">
+              <h5 class="card-title">Hi Mum and Thank You!</h5>
+              <p class="card-text font-weight-light">It’s slow going, I don’t get much time to dedicate to this web development stuff - but hopefully it will pay
+                off in the end. To the right —> is the current state of my loan from you. It is a start - and probably not
+                great, but I will keep adding to this site and practicing until I am competent.</p>
+            </div>
+          </div>
         </div>
-        <div class="container col-sm-9" id="info-panel-1">
-          <div class="row">
-            <div class="container-fluid">
-              <div class="row justify-content-center">
-                <div class="col-sm-2 col-xs-3">
-                  <p class="text-right border border-white">Start Date</p>
-                  <p class="text-right border border-white">End Date</p>
-                  <p class="text-right border border-white">Most Recent Payment</p>
-                </div>
-                <div class="col-sm-2 col-xs-3">
-                  <p class="border order border-secondary rounded bg-light text-center text-muted" id="start-date"></p>
-                  <p class="border order border-secondary rounded bg-light text-center text-muted" id="end-date"></h4>
-                  <p class="border border-info rounded bg-light text-center text-muted" id="most-recent-payment-date"></p>
-                </div>
-                <div class="col-sm-2 col-xs-3">
-                  <p class="text-right border border-white">Principal<p>
-                  <p class="text-right border border-white">Repayment</p>
-                  <p class="text-right border border-white">Current Owing</p>
-                </div>
-                <div class="col-sm-2 col-xs-3">
-                  <p class="border order border-secondary rounded bg-light text-center text-muted" id="principal"></p>
-                  <p class="border order border-secondary rounded bg-light text-center text-muted" id="repayment"></p>
-                  <p class="border border-danger rounded bg-light text-center text-muted" id="current-owing"></p>
-                </div>
+      </div>
+      <div class="col-xs-12 col-md-9" id="info-chart-panel">
+        <div class="row">
+          <div class="col-xs-12 col-lg-6">
+            <div class="row justify-content-center align-items-center ">
+              <div class="col-sm-4">
+                <p class="text-right border border-white">Start Date</p>
+              </div>
+              <div class="col-sm-6">
+                <p class="border order border-secondary rounded bg-light text-center text-muted p-1" id="start-date"></p>
+              </div>
+            </div>
+            <div class="row justify-content-center align-items-center">
+              <div class="col-sm-4">
+                <p class="text-right border border-white">End Date</p>
+              </div>
+              <div class="col-sm-6">
+                <p class="border order border-secondary rounded bg-light text-center text-muted p-1" id="end-date">
+                  </h4>
+              </div>
+            </div>
+            <div class="row justify-content-center align-items-center">
+              <div class="col-sm-4">
+                <p class="text-right border border-white">Last Payment</p>
+              </div>
+              <div class="col-sm-6">
+                <p class="border border-info rounded bg-light text-center text-muted p-1" id="most-recent-payment-date"></p>
+              </div>
+            </div>
+          </div>
+          <div class="col-xs-12 col-lg-6">
+            <div class="row justify-content-center align-items-center">
+              <div class="col-sm-4">
+                <p class="text-right border border-white">Principal
+                  <p>
+              </div>
+              <div class="col-sm-6">
+                <p class="border order border-secondary rounded bg-light text-center text-muted p-1" id="principal"></p>
+              </div>
+            </div>
+            <div class="row justify-content-center align-items-center">
+              <div class="col-sm-4">
+                <p class="text-right border border-white">Repayment</p>
+              </div>
+              <div class="col-sm-6">
+                <p class="border order border-secondary rounded bg-light text-center text-muted p-1" id="repayment"></p>
+              </div>
+            </div>
+            <div class="row justify-content-center align-items-center">
+              <div class="col-sm-4">
+                <p class="text-right border border-white">Current Owing</p>
+              </div>
+              <div class="col-sm-6">
+                <p class="border border-danger rounded bg-light text-center text-muted p-1" id="current-owing"></p>
               </div>
             </div>
           </div>
         </div>
-        <!-- <div id="info-panel-2">
-            <h4 id="all-payments"></h4>
-        </div> -->
-       </div>
+        <div class="container" id="chart">
+
+        </div>
+      </div>
     </div>
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-  </body>
+  </div>
+  </div>
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/usm/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
+</body>
+
 </html>
