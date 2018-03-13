@@ -1,19 +1,60 @@
-var ctx = document.getElementById('myChart').getContext('2d');
-var chart = new Chart(ctx, {
-    // The type of chart we want to create
-    type: 'line',
-
-    // The data for our dataset
+const ctx = document.getElementById("myChart").getContext("2d");
+let chart = new Chart(ctx, {
+    type: "line",
     data: {
-        labels: ["January", "February", "March", "April", "May", "June", "July"],
+        labels: projectedPaymentDate,
         datasets: [{
-            label: "My First dataset",
-            backgroundColor: 'rgb(255, 99, 132)',
-            borderColor: 'rgb(255, 99, 132)',
-            data: [0, 10, 5, 2, 20, 30, 45],
+            label: "Projected Balance",
+            backgroundColor: "rgb(10,50,100)",
+            borderColor: "rgb(10,50,100)",
+            fill: false,
+            data: projectedCurrentBalance,
+        }, {
+            label: "Current Balance",
+            backgroundColor: "rgb(255, 99, 132)",
+            borderColor: "rgb(255, 99, 132)",
+            data: currentBalance,
         }]
     },
-
-    // Configuration options go here
-    options: {}
+    options: {
+        scales: {
+            xAxes: [{
+                id: "x-axis-0",
+                type: "time",
+                time: {
+                    unit: "quarter",
+                    displayFormats: {
+                        quarter: "MMMM"
+                    }
+                },
+                ticks: {
+                    autoSkip: true
+                }
+            },
+            {
+                id: "x-axis-1",
+                type: "time",
+                time: {
+                    unit: "year",
+                    displayFormats: {
+                        year: "YYYY"
+                    }
+                },
+                gridLines: {
+                    display: false
+                },
+                ticks: {
+                    autoSkip: true
+                }
+            }],
+            yAxes: [{
+                ticks: {
+                    beginAtZero: true
+                }
+            }]
+        },
+    }
 });
+
+
+console.log(chart);
