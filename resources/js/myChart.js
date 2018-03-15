@@ -8,7 +8,7 @@ let chart = new Chart(ctx, {
             backgroundColor: "rgba(80, 255, 123, 0.5)",
             borderColor: "rgba(80, 255, 123, 0.5)",
             lineTension: 0,
-            pointRadius: 1,
+            pointRadius: 0,
             pointHoverRadius: 8,
             cubicInterpolationMode: "monotone",
             data: currentBalance,
@@ -17,8 +17,22 @@ let chart = new Chart(ctx, {
             backgroundColor: "rgb(10,50,100)",
             borderColor: "rgb(10,50,100)",
             fill: false,
+            showLine: false,
             lineTension: 0,
-            pointRadius: 1,
+            pointRadius: 0,
+            pointHitRadius: 4,
+            pointHoverRadius: 8,
+            cubicInterpolationMode: "monotone",
+            data: projectedCurrentBalance,
+        },
+        {
+            label: "Projected Balance Line",
+            backgroundColor: "rgb(10,50,100)",
+            borderColor: "rgb(10,50,100)",
+            fill: false,
+            // showLine: false,
+            lineTension: 0,
+            pointRadius: 0,
             pointHoverRadius: 8,
             cubicInterpolationMode: "monotone",
             data: projectedCurrentBalance,
@@ -35,7 +49,8 @@ let chart = new Chart(ctx, {
                     displayFormats: {
                         month: "MMM"
                     },
-                    tooltipFormat: "ll"
+                    tooltipFormat: "ll",
+                    max: moment("2-03-2022", "DD-MM-YYYY")
                 },
                 ticks: {
                     autoSkip: true,

@@ -79,6 +79,7 @@ for (let i=0; i<=paymentsSinceStart; i++) {
 const projectedPaymentId = [];
 const projectedCurrentBalance = [];
 const projectedPaymentDate = [];
+// const projectedPaymentBalanceTwo = projectedBalancetDate[0,projectedBalanceDate.length];
 //create arrays
 for (let i=0; i<=totalNumberOfRepayments; i++) {
     // projectedPaymentsArr.push(totalNumberOfRepayments);
