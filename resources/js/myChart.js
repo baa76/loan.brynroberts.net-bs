@@ -1,4 +1,5 @@
 const ctx = document.getElementById("myChart").getContext("2d");
+
 let chart = new Chart(ctx, {
     type: "line",
     data: {
@@ -27,10 +28,13 @@ let chart = new Chart(ctx, {
         },
         {
             label: "Projected Balance Line",
-            backgroundColor: "rgb(10,50,100)",
-            borderColor: "rgb(10,50,100)",
-            fill: false,
+            backgroundColor: "rgb(100,50,100)",
+            borderColor: "rgb(100,50,100)",
+            fill: true,
             // showLine: false,
+            spanGaps: false,
+            pointStyle: "dash",
+            pointBorderWidth: 0,
             lineTension: 0,
             pointRadius: 0,
             pointHoverRadius: 8,
@@ -74,10 +78,11 @@ let chart = new Chart(ctx, {
                 }
             }],
             yAxes: [{
+                distribution: "linear",
                 ticks: {
                     beginAtZero: true,
                     min: "0",
-                    max: "5475",
+                    max: "5500",
                     callback: function(value, index, values) {
                         return "$ " + value;
                     }

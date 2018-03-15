@@ -57,7 +57,7 @@ const currentPaymentDate = [];
 
 for (let i=0; i<=paymentsSinceStart; i++) {
     currentPaymentId.push(i+1);
-    currentBalance.push(loanPrincipal - (weeklyRepayment * (i+1)));
+    currentBalance.push(loanPrincipal - (weeklyRepayment * i));
     currentPaymentDate.push(new Date(startDateMs + (i * oneWeekMs)));
 }
 
@@ -79,18 +79,20 @@ for (let i=0; i<=paymentsSinceStart; i++) {
 const projectedPaymentId = [];
 const projectedCurrentBalance = [];
 const projectedPaymentDate = [];
+
 // const projectedPaymentBalanceTwo = projectedBalancetDate[0,projectedBalanceDate.length];
 //create arrays
 for (let i=0; i<=totalNumberOfRepayments; i++) {
     // projectedPaymentsArr.push(totalNumberOfRepayments);
     projectedPaymentId.push(i+1);
-    projectedCurrentBalance.push(loanPrincipal - (weeklyRepayment * (i+1)));
+    projectedCurrentBalance.push(loanPrincipal - (weeklyRepayment * i));
     projectedPaymentDate.push(new Date(startDateMs + (i * oneWeekMs)));
 }
 
+// const projectedCurrentBalanceLine = projectedCurrentBalance[projectedCurrentBalance[0], projectedCurrentBalance[projectedCurrentBalance.length - 1]]; //No need for new Array(), and you can just assign items in positions inline
 
 
-
+// console.log(projectedCurrentBalanceLine);
 
 // Render
 document.getElementById("principal").innerHTML = `$${ loanPrincipal }`;
