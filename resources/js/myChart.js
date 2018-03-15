@@ -54,14 +54,16 @@ let chart = new Chart(ctx, {
                         month: "MMM"
                     },
                     tooltipFormat: "ll",
-                    max: moment("2-03-2022", "DD-MM-YYYY")
+                    max: moment("22-02-2022", "DD-MM-YYYY")
                 },
                 ticks: {
                     autoSkip: true,
                     maxRotation: 0,
-                    minRotation: 0,
-                    beginAtZero: true
-                }
+                    fontSize: 10
+                },
+                gridLines: {
+                    drawTicks: true
+                },
             },
             {
                 id: "x-axis-1",
@@ -74,7 +76,10 @@ let chart = new Chart(ctx, {
                     display: false
                 },
                 ticks: {
-                    beginAtZero: true
+                    beginAtZero: true,
+                    fontSize: 12,
+                    fontStyle: "Bold",
+                    fontColor: "#A6A6A6"
                 }
             }],
             yAxes: [{
