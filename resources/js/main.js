@@ -89,10 +89,10 @@ for (let i=0; i<=totalNumberOfRepayments; i++) {
     projectedPaymentDate.push(new Date(startDateMs + (i * oneWeekMs)));
 }
 
-// const projectedCurrentBalanceLine = projectedCurrentBalance[projectedCurrentBalance[0], projectedCurrentBalance[projectedCurrentBalance.length - 1]]; //No need for new Array(), and you can just assign items in positions inline
+const projectedCurrentBalanceLine = projectedCurrentBalance[0,221]; //No need for new Array(), and you can just assign items in positions inline
 
 
-// console.log(projectedCurrentBalanceLine);
+console.log(projectedCurrentBalanceLine);
 
 // Render
 document.getElementById("principal").innerHTML = `$${ loanPrincipal }`;
