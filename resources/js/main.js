@@ -9,7 +9,6 @@ const loanPrincipal = 5500;
 
 // Workings
 const weeksDifference = Math.abs(startDate - currentDate);
-// const findLastPayment = (startDateMs + weeksDifference);
 
 // Outputs
 
@@ -31,26 +30,6 @@ const dateOfLastPayment = new Date(getDateOfLastPayment).toDateString();
 const totalNumberOfRepayments = loanPrincipal / weeklyRepayment;
 
 
-// List of all payments to current date
-// for (let i=0; i<=paymentsSinceStart; i++) {
-//     new Date(startDateMs + (i * oneWeekMs)).toDateString();
-// }
-
-// const paymentsToDate = [];
-
-// for (let i=0; i<=paymentsSinceStart; i++) {
-//     const paymentDate = new Date(startDateMs + (i * oneWeekMs));
-//     paymentsToDate.push({
-//         paymentId: i+1,
-//         paymentAmount: weeklyRepayment,
-//         adjustedBalance: loanPrincipal - (weeklyRepayment * (i+1)),
-//         paymentYear: paymentDate.getFullYear(),
-//         paymentMonth: paymentDate.getMonth(),
-//         paymentDay: paymentDate.getDate(),
-//     });
-// }
-
-// const paymentsToDateArr = [];
 const currentPaymentId = [];
 const currentBalance = [];
 const currentPaymentDate = [];
@@ -61,38 +40,17 @@ for (let i=0; i<=paymentsSinceStart; i++) {
     currentPaymentDate.push(new Date(startDateMs + (i * oneWeekMs)));
 }
 
-
-// const projectedPayments = [];
-
-// for (let i=0; i<=totalNumberOfRepayments; i++) {
-//     const paymentDate = new Date(startDateMs + (i * oneWeekMs));
-//     projectedPayments.push({
-//         paymentId: i+1,
-//         paymentAmount: weeklyRepayment,
-//         adjustedBalance: loanPrincipal - (weeklyRepayment * (i+1)),
-//         paymentYear: paymentDate.getFullYear(),
-//         paymentMonth: paymentDate.getMonth(),
-//         paymentDay: paymentDate.getDate(),
-//     });
-// }
-// const projectedPaymentsArr = [];
 const projectedPaymentId = [];
 const projectedCurrentBalance = [];
 const projectedPaymentDate = [];
 
-// const projectedPaymentBalanceTwo = projectedBalancetDate[0,projectedBalanceDate.length];
 //create arrays
 for (let i=0; i<=totalNumberOfRepayments; i++) {
-    // projectedPaymentsArr.push(totalNumberOfRepayments);
     projectedPaymentId.push(i+1);
     projectedCurrentBalance.push(loanPrincipal - (weeklyRepayment * i));
     projectedPaymentDate.push(new Date(startDateMs + (i * oneWeekMs)));
 }
 
-const projectedCurrentBalanceLine = projectedCurrentBalance[0,221]; //No need for new Array(), and you can just assign items in positions inline
-
-
-console.log(projectedCurrentBalanceLine);
 
 // Render
 document.getElementById("principal").innerHTML = `$${ loanPrincipal }`;
@@ -103,3 +61,9 @@ document.getElementById("most-recent-payment-date").innerHTML = `${ dateOfMostRe
 document.getElementById("current-owing").innerHTML = `$${ calcCurrentAmountOwing }`;
 document.getElementById("payments-made").innerHTML = `${ paymentsSinceStart }`;
 document.getElementById("total-payments").innerHTML = `${ totalNumberOfRepayments }`;
+
+
+const pcb = projectedCurrentBalance;
+const pcb1 = pcb[0];
+const pcb2 = pcb[pcb.length -1];
+const pcbLine = pcb1.concat(pcb2);

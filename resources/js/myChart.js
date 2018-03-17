@@ -17,7 +17,7 @@ let chart = new Chart(ctx, {
             label: "Projected Balance",
             backgroundColor: "rgb(10,50,100)",
             borderColor: "rgb(10,50,100)",
-            fill: false,
+            fill: true,
             showLine: false,
             lineTension: 0,
             pointRadius: 0,
@@ -30,7 +30,7 @@ let chart = new Chart(ctx, {
             label: "Projected Balance Line",
             backgroundColor: "rgb(100,50,100)",
             borderColor: "rgb(100,50,100)",
-            fill: true,
+            fill: false,
             // showLine: false,
             spanGaps: false,
             pointStyle: "dash",
@@ -101,3 +101,4 @@ let chart = new Chart(ctx, {
 
 console.log(chart.options.scales);
 console.log(chart);
+console.log(pcbLine);
