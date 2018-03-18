@@ -51,7 +51,6 @@ for (let i=0; i<=totalNumberOfRepayments; i++) {
     projectedPaymentDate.push(new Date(startDateMs + (i * oneWeekMs)));
 }
 
-
 // Render
 document.getElementById("principal").innerHTML = `$${ loanPrincipal }`;
 document.getElementById("repayment").innerHTML = `$${ weeklyRepayment } per week`;
@@ -61,9 +60,3 @@ document.getElementById("most-recent-payment-date").innerHTML = `${ dateOfMostRe
 document.getElementById("current-owing").innerHTML = `$${ calcCurrentAmountOwing }`;
 document.getElementById("payments-made").innerHTML = `${ paymentsSinceStart }`;
 document.getElementById("total-payments").innerHTML = `${ totalNumberOfRepayments }`;
-
-
-const pcb = projectedCurrentBalance;
-const pcb1 = pcb[0];
-const pcb2 = pcb[pcb.length -1];
-const pcbLine = pcb1.concat(pcb2);
